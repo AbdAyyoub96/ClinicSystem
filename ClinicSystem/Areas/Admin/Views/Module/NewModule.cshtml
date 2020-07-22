@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "NewModule";
+    Layout = "~/Views/Shared/HomePage.cshtml";
+}
+@section Head{
+    <script src="~/Scripts/NewScripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: 'Get',
+                url: '/ClinicSystemApi/api/Module/SubMoudle',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: '{}',
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        $('#ddlSubmain').append('<option value=' + value.Id + '>' + value.Name + '</option>');
+                    });
+                },
+                error: function (error) {
+                    alert(error.responseText);
+                    alert('there is error');
+                }
+            })
+
+
+            $('#btnSave').click(function () {
+                debugger;
+                var name = $("#txtname").val();
+                var shortName = $('#txtShname').val();
+                var order = $('#txtorder').val();
+                var path = $('#txtpath').val();
+                var sub = $('#ddlSubmain').val();
+                var data = {
+                    'Name': name,
+                    'ShortName': shortName,
+                    'Order': order,
+                    'Path': path,
+                    'SubModule': sub
+                }
+                $.ajax({
+                    type: 'post',
+                    url: '/ClinicSystemApi/api/Module/Save',
+                    contentType: 'application/json;charset=utf-8',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data)
+                    },
+                    error: function (error) {
+                        alert(error.responseText);
+                        alert('there is error');
+                    }
+
+
+                })
+            })
+
+            $('#btnUpdate').click(function () {
+                debugger;
+                var id = 12;
+                var name = $("#txtname").val();
+                var shortName = $('#txtShname').val();
+                var order = $('#txtorder').val();
+                var path = $('#txtpath').val();
+                var sub = $('#ddlSubmain').val();
+                var data = {
+                    'Id': id,
+                    'Name': name,
+                    'ShortName': shortName,
+                    'Order': order,
+                    'Path': path,
+                    'SubModule': sub
+                }
+                $.ajax({
+                    type: 'post',
+                    url: '/ClinicSystemApi/api/Module/Update',
+                    contentType: 'application/json;charset=utf-8',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data)
+                    },
+                    error: function (error) {
+                        alert(error.responseText);
+                        alert('there is error');
+                    }
+
+
+                })
+            })
+           
+        });
+    </script>
+    
+}
+@section Body{
+    <div class="container x_panel">
+        <div class="row">
+            <div class="col-lg-3">
+                <h4 style="color:#18cce5">New Module</h4>
+            </div>
+            <div class="col-lg-2 col-lg-offset-5">
+                <button type="button" class="btn btn-outline-success" id="btnSave">
+                    <span class="fa fa-save"></span> Save
+                </button>
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-outline-danger" id="btnUpdate">
+                    <span class="fa fa-trash"></span> Discared
+                </button>
+            </div>
+        </div>
+        <div class="x_title"></div>
+        <div class="x_panel">
+            <h4 style="color:#808080">Module Information</h4>
+            <div class="x_title"></div>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Name :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtname" id="txtname" />
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Short name :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtShname" id="txtShname" />
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Order :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtorder" id="txtorder"/>
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>path :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtpath" id="txtpath" />
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>sub Module :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <select id="ddlSubmain" name="ddlSub" class="form-control">
+                                <option value="0" selected>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+}
+

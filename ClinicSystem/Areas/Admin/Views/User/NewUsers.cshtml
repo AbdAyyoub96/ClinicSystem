@@ -1,0 +1,247 @@
+﻿
+@{
+    ViewBag.Title = "NewUsers";
+    Layout = "~/Views/Shared/HomePage.cshtml";
+}
+
+@section Body{
+<div class="container x_panel">
+    <div class="row">
+        <div class="col-lg-3">
+            <h4 style="color:#18cce5">New User</h4>
+        </div>
+        <div class="col-lg-2 col-lg-offset-5">
+            <button type="button" class="btn btn-outline-success">
+                <span class="fa fa-save"></span> Save
+            </button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-danger">
+                <span class="fa fa-trash"></span> Discared
+            </button>
+        </div>
+    </div>
+    <div class="x_title"></div>
+    <div class="x_panel">
+        <h4 style="color:#808080">Basic Information</h4>
+        <div class="x_title"></div>
+        <div class="container-fluid">
+            <div class="form-group">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>First name :</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="txtFname" />
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>Last name :</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="txtLname" />
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>Order :</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="txtorder" />
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>Gender :</label>
+                            </div>
+                            <div class="col-lg-2">
+                                <input type="radio" name="rdnGender" /> Male
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="radio" name="rdnGender" /> Female
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>Birth Date :</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="datetime-local" class="form-control" name="txtDate" />
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <label>Profie Picture:</label>
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="file" class="form-control" name="filePic" />
+                            </div>
+                        </div>
+                        <div class="x_content"></div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <input type="checkbox" name="checked" /> is Doctor
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <img src="~/Images1/person.png" width="100" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="x_panel">
+        <h4 style="color:#808080">Cotact Information</h4>
+        <div class="x_title"></div>
+        <div class="container-fluid">
+            <div class="form-group">
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Phone Number :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtPhone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Email :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtEmail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Address :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtAddress" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="x_panel">
+        <h4 style="color:#808080">Account Information</h4>
+        <div class="x_title"></div>
+        <div class="container-fluid">
+            <div class="form-group">
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>User name :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtUser" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Password :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtPass" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Confirm Password :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="txtConfirm" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Effective Date :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="datetime-local" class="form-control" name="txtEff" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Expiry Date :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="datetime-local" class="form-control" name="txtExp" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Status :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="checkbox" name="checked" /> Active
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Status Date :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="datetime-local" class="form-control" name="txtStatus" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2">
+                        <label>Group :</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <select name="ddlSub" class="form-control">
+                            <option value="0" selected>--Select--</option>
+                            <option value="1" selected>Administrator</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+    }
+

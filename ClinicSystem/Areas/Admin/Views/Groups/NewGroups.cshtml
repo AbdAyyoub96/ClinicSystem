@@ -1,0 +1,260 @@
+﻿
+@{
+    ViewBag.Title = "NewGroups";
+    Layout = "~/Views/Shared/HomePage.cshtml";
+}
+@section Body{
+    <div class="container x_panel">
+        <div class="row">
+            <div class="col-lg-3">
+                <h4 style="color:#18cce5">New Group</h4>
+            </div>
+            <div class="col-lg-2 col-lg-offset-5">
+                <button type="button" class="btn btn-outline-success">
+                    <span class="fa fa-save"></span> Save
+                </button>
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-outline-danger">
+                    <span class="fa fa-trash"></span> Discared
+                </button>
+            </div>
+        </div>
+        <div class="x_title"></div>
+        <div class="x_panel">
+            <h4 style="color:#808080">Group Information</h4>
+            <div class="x_title"></div>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Name :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtname" />
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Short name :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="txtShname" />
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Status :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="checkbox" name="txtorder" value="Active" />
+                            <label>Active</label>
+                        </div>
+                    </div>
+                    <div class="x_content"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-2">
+                            <label>Status Date :</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="datetime-local" class="form-control" name="txtDate" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container x_panel">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <p>Pages</p>
+                <table class="table" border="1">
+                    <thead style="background-color:#291ebf;color:white">
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="checkall" />
+                            </th>
+                            <th>
+                                <p>Page Name</p>
+                            </th>
+                            <th>
+                                <p>Page Order</p>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span class="fa fa-plus-circle"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <p>Accessed</p>
+                <table class="table" border="1">
+                    <thead style="background-color:#291ebf;color:white">
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="checkall" />
+                            </th>
+                            <th>
+                                <p>Page Name</p>
+                            </th>
+                            <th>
+                                <p>Page Order</p>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span style="color:blue" class="fa fa-trash-alt"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span style="color:blue" class="fa fa-trash-alt"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" />
+                            </td>
+                            <td>
+                                <p>PatintList</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <button class="btn">
+                                    <span style="color:blue" class="fa fa-trash-alt"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+

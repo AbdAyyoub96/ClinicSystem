@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/HomePage.cshtml";
+}
+
+@section Body{
+    <div class="x_panel">
+        <div class="row">
+            <div class="col-lg-3">
+                <h2 style="color:#0094ff">Users</h2>
+            </div>
+            <div class="col-lg-2 col-lg-offset-7">
+                <img src="~/Images1/Icons/add_Account.png" style="width:50%" />
+            </div>
+        </div>
+        <div class="x_title"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-1">
+                    <input type="checkbox" name="checed" />
+                </div>
+                <div class="col-lg-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input id="txtSearch" type="text" class="form-control" name="txtSearch" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-lg-offset-3">
+                    <button type="button" class="btn border-primary">
+                        <span class="fa fa-search"></span> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="x_title"></div>
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <input type="checkbox" name="checed" />
+                    </div>
+                    <div class="col-lg-3">
+                        <img src="~/Images1/person.png" width="100%"/>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4 style="color:#808080">Abdelrahman Ayyoub</h4>
+                        <h4 style="color:#808080">a.ayyoub</h4>
+                        <h4 style="color:#808080">Active</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-dark">
+                        <span class="fa fa-edit"></span> Edit
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="fa fa-trash"></span> delete
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <span class="fa fa-plus"></span> Change Status
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="x_title"></div>
+    </div>
+}
+
