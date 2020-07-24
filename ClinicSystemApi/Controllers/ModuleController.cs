@@ -33,18 +33,26 @@ namespace ClinicSystemApi.Controllers
             modu.Insert(mod);
         }
         [HttpPost]
-        [Route("api/Module/Update")]
+        [Route ("api/Module/Update")]
         public void Update(Module mod)
         {
             IModule modu = new ModuleRep();
             modu.Update(mod);
         }
         [HttpPost]
-        [Route("api/Module/Delete/{id}")]
+        [Route("api/Module/Deletemod/{id}")]
         public void Delete(int id)
         {
             IModule modu = new ModuleRep();
             modu.Delete(id);
+        }
+
+        [HttpGet]
+        [Route("api/Module/Load/{id}")]
+        public Module Load(int id)
+        {
+            IModule modu = new ModuleRep();
+            return modu.Load(id);
         }
 
     }

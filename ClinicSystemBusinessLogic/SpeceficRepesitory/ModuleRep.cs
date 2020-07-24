@@ -46,5 +46,10 @@ namespace ClinicSystemBusinessLogic.SpeceficRepesitory
             IGeneric<Module> modu = new Generic<Module>();
             modu.Delete(x);
         }
+        public Module Load(int x)
+        {
+            IGeneric<Module> modu = new Generic<Module>();
+            return modu.Load(x);
+        }
     }
 }

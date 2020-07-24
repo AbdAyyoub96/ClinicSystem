@@ -7,6 +7,7 @@
     <script src="~/Scripts/NewScripts/jquery-3.3.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            debugger;
             $.ajax({
                 type: 'Get',
                 url: '/ClinicSystemApi/api/Module/SubMoudle',
@@ -23,72 +24,89 @@
                     alert('there is error');
                 }
             })
-
-
+            var Id = @ViewData["Id"];
+            if (Id != 0) {
+                $('#btnSave').text("Update")
+                $.ajax({
+                    type: 'Get',
+                    url: '/ClinicSystemApi/api/Module/Load/' + Id,
+                    contentType: 'application/json;charset=utf-8',
+                    dataType: 'json',
+                    data: '{}',
+                    success: function (data) {
+                        $('#txtname').val(data.Name);
+                        $('#txtorder').val(data.Order);
+                        $('#txtpath').val(data.Path);
+                        $('#txtShname').val(data.ShortName);
+                        $('#ddlSubmain').val(data.SubModule);
+                    }
+                })
+            }
             $('#btnSave').click(function () {
                 debugger;
+                var Id = @ViewData["Id"];
+                if (Id != 0) {
                 var name = $("#txtname").val();
                 var shortName = $('#txtShname').val();
                 var order = $('#txtorder').val();
                 var path = $('#txtpath').val();
                 var sub = $('#ddlSubmain').val();
-                var data = {
+                    var data = {
+                        'Id': Id,
                     'Name': name,
                     'ShortName': shortName,
                     'Order': order,
                     'Path': path,
                     'SubModule': sub
                 }
-                $.ajax({
-                    type: 'post',
-                    url: '/ClinicSystemApi/api/Module/Save',
-                    contentType: 'application/json;charset=utf-8',
-                    data: JSON.stringify(data),
-                    dataType: 'json',
-                    success: function (data) {
-                        alert(data)
-                    },
-                    error: function (error) {
-                        alert(error.responseText);
-                        alert('there is error');
-                    }
+                    $.ajax({
+                        type: 'post',
+                        url: '/ClinicSystemApi/api/Module/Update',
+                        contentType: 'application/json;charset=utf-8',
+                        data: JSON.stringify(data),
+                        dataType: 'json',
+                        success: function () {
+                            alert("Updated")
+                        },
+                        error: function (error) {
+                            alert(error.responseText);
+                            alert('there is error');
+                        }
 
 
-                })
-            })
-
-            $('#btnUpdate').click(function () {
-                debugger;
-                var id = 12;
-                var name = $("#txtname").val();
-                var shortName = $('#txtShname').val();
-                var order = $('#txtorder').val();
-                var path = $('#txtpath').val();
-                var sub = $('#ddlSubmain').val();
-                var data = {
-                    'Id': id,
-                    'Name': name,
-                    'ShortName': shortName,
-                    'Order': order,
-                    'Path': path,
-                    'SubModule': sub
+                    })
                 }
-                $.ajax({
-                    type: 'post',
-                    url: '/ClinicSystemApi/api/Module/Update',
-                    contentType: 'application/json;charset=utf-8',
-                    data: JSON.stringify(data),
-                    dataType: 'json',
-                    success: function (data) {
-                        alert(data)
-                    },
-                    error: function (error) {
-                        alert(error.responseText);
-                        alert('there is error');
+                else {
+                    var name = $("#txtname").val();
+                    var shortName = $('#txtShname').val();
+                    var order = $('#txtorder').val();
+                    var path = $('#txtpath').val();
+                    var sub = $('#ddlSubmain').val();
+                    var data = {
+                        'Name': name,
+                        'ShortName': shortName,
+                        'Order': order,
+                        'Path': path,
+                        'SubModule': sub
                     }
+                    $.ajax({
+                        type: 'Post',
+                        url: '/ClinicSystemApi/api/Module/Save',
+                        contentType: 'application/json;charset=utf-8',
+                        data: JSON.stringify(data),
+                        dataType: 'json',
+                        success: function () {
+                            alert("Saved")
+                        },
+                        error: function (error) {
+                            alert(error.responseText);
+                            alert('there is error');
+                        }
 
 
-                })
+                    })
+                }
+                
             })
            
         });

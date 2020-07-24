@@ -9,11 +9,12 @@ namespace DataAccessClinicSystem.Genirec
 {
     public class Generic<T> : IGeneric<T> where T : class
     {
-        public void Delete(int id)
+        public void Delete(object id)
         {
             ClinicSystemContext con = new ClinicSystemContext();
-            var del = con.Set<T>().Find(id);
+            T del = con.Set<T>().Find(id);
             con.Set<T>().Remove(del);
+            con.SaveChanges();
         }
 
         public void Insert(T obj)

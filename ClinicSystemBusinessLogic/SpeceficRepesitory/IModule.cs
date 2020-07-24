@@ -13,5 +13,6 @@ namespace ClinicSystemBusinessLogic.SpeceficRepesitory
         void Update(Module mod);
         List<Module> LoadMain();
         void Delete(int x);
+        Module Load(int x);
     }
 }

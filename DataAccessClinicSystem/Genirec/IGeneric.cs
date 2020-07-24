@@ -11,7 +11,7 @@ namespace DataAccessClinicSystem.Genirec
     {
         void Insert(T obj);
         void Update(T obj);
-        void Delete(int id);
+        void Delete(object id);
         T Load(int id);
         List<T> LoadAll();
 

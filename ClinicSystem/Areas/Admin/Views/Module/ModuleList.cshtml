@@ -5,21 +5,25 @@
 }
 @section Head{
     <script type="text/javascript">
-        function del(Id) {
+        function del(id) {
             debugger;
             $.ajax({
                 type: 'post',
-                url: '/ClinicSystemApi/api/Module/Delete/' + Id,
+                url: '/ClinicSystemApi/api/Module/Deletemod/' + id,
                 contentType: 'application/json;charset=utf-8',
                 dataType: 'json',
-                success: function (data) {
-                    alert(data)
+                success: function () {
+                    alert("Deleted")
                 },
                 error: function (error) {
                     alert(error.responseText);
                     alert('there is error');
                 }
             });
+        }
+        function Update(id) {
+            debugger;
+            window.location = '@Url.Action("Update/Id", "Module")'.replace("Id", id)
         }
     </script>
     }
@@ -73,12 +77,12 @@
                 <h5 style="color:#808080">Oreder: @x.Order</h5>
             </div>
             <div class="col-lg-2 col-lg-offset-4">
-                <button type="button" class="btn btn-dark">
+                <button type="button" class="btn btn-dark" onclick="Update(@x.Id)">
                     <span class="fa fa-edit"></span> Edit
                 </button>
             </div>
             <div class="col-lg-2">
-                <button type="button" class="btn btn-default" onclick="del('@x.Id')">
+                <button type="button" class="btn btn-default" onclick="del(@x.Id)">
                     <span class="fa fa-trash"></span> delete
                 </button>
             </div>
@@ -100,12 +104,12 @@
                                 <h5 style="color:#808080">Oreder:@y.Order</h5>
                             </div>
                             <div class="col-lg-2 col-lg-offset-3">
-                                <button type="button" class="btn btn-dark">
+                                <button type="button" class="btn btn-dark" onclick="Update(@y.Id)">
                                     <span class="fa fa-edit"></span> Edit
                                 </button>
                             </div>
                             <div class="col-lg-2">
-                                <button type="button" class="btn btn-default">
+                                <button type="button" class="btn btn-default" onclick="del(@y.Id)">
                                     <span class="fa fa-trash"></span> delete
                                 </button>
                             </div>

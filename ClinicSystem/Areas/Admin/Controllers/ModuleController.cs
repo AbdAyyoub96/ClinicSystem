@@ -30,6 +30,11 @@ namespace ClinicSystem.Areas.Admin.Controllers
             vm.Mod = moduleList;
             return View("ModuleList",vm);
         }
+        public ActionResult Update(int id)
+        {
+            ViewData["Id"] = id;
+            return View("NewModule");
+        }
         public ActionResult NewModule()
         {
             return View();
